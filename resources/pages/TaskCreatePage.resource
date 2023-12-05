@@ -1,0 +1,19 @@
+*** Settings ***
+Documentation     Ações e elementos da página de cadastro de tarefas
+Library           Browser
+
+*** Keywords ***
+Submit task form
+    [Arguments]        ${task}
+    # $ é termina com
+    Fill Text              css=input[placeholder$=tarefa]        ${task}[name]
+
+    ${tags_element}        Set Variable                          css=input[name=tags]     
+    
+    FOR  ${TAG}    IN      @{task}[tags]
+        Fill Text          ${tags_element}                      ${tag}
+        Sleep              1
+        Press Keys         ${tags_element}                      Enter
+    END
+    
+    Click              css=button[type=submit] >> text=Cadastrar
