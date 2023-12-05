@@ -110,6 +110,7 @@ git add .
 git commit -m "This is a new commit for what I originally planned to be amended"
 git status
 git push origin main
+git reset --mixed origin/main
 
 para criar a chave ssh do git hub no terminal digitar
     ssh-keygen
