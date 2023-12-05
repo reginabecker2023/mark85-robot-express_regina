@@ -103,6 +103,7 @@ robot -d ./logs -i dup tests/signup.robot
 # Para trabalhar com fixtures, precisa instalar a biblioteca
 pip install robotframework-jsonlibrary
 
+# Disponibizar repositório
 git init
 git status
 git add .
